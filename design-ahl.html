@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Design Ahl</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;1,9..144,500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fffdf8;--ink:#231f2b;--muted:#6a6475;--line:#eadfd0;--card:#fff;--c1:#ff6b57;--c2:#ffb703;--c3:#2bb39a;--c4:#8d6bf0;--c5:#2f9be6;--onc:#231f2b;
+--f:"Fraunces","Times New Roman",Times,Georgia,serif;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:calc(70px + env(safe-area-inset-top,0px))}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#17141d;--ink:#f6f1ea;--muted:#b5aebf;--line:#352f42;--card:#221e2b}}
+:root[data-theme="dark"]{--bg:#17141d;--ink:#f6f1ea;--muted:#b5aebf;--line:#352f42;--card:#221e2b}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--f);font-size:18px;line-height:1.55;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:30}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--bg);border-bottom:1px solid var(--line);padding:14px 24px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-weight:700;font-size:1.5rem;letter-spacing:-.01em;text-decoration:none;color:var(--ink);background:none;border:0;cursor:pointer;font-family:var(--f)}
+.logo b{color:var(--c1)}
+main{max-width:980px;margin:0 auto;padding:0 22px 60px}
+.hero{text-align:center;padding:64px 0 40px;position:relative}
+.hero h1{font-size:clamp(3rem,11vw,6rem);line-height:1;margin:0 0 14px;letter-spacing:-.03em}
+.hero p{font-size:1.3rem;color:var(--muted);max-width:30em;margin:0 auto}
+.dot{position:absolute;border-radius:50%;z-index:-1;opacity:.9}
+.d1{width:90px;height:90px;background:var(--c2);top:30px;left:4%}.d2{width:56px;height:56px;background:var(--c3);top:120px;right:7%}.d3{width:40px;height:40px;background:var(--c4);bottom:20px;left:14%}.d4{width:70px;height:70px;border:6px solid var(--c1);bottom:0;right:16%}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px;margin-top:14px}
+.tile{text-align:left;border:0;border-radius:26px;padding:26px;color:#231f2b;cursor:pointer;font:inherit;min-height:190px;display:flex;flex-direction:column;justify-content:space-between;transition:transform .2s,box-shadow .2s}
+.tile:hover{transform:translateY(-5px) rotate(-.6deg);box-shadow:0 14px 30px rgba(35,31,43,.18)}
+.tile .em{font-size:2.4rem;line-height:1}
+.tile h2{font-size:1.6rem;line-height:1.1;margin:10px 0 4px}
+.tile small{font-size:.95rem;opacity:.75}
+.k1{background:#ffd3cc}.k2{background:#ffe7a3}.k3{background:#bfeadf}.k4{background:#dcd0fb}.k5{background:#c5e4fa}
+button:focus-visible{outline:3px solid var(--c4);outline-offset:3px}
+h3.sec{font-size:1.4rem;margin:44px 0 12px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{background:var(--card);border:1px solid var(--line);border-radius:999px;padding:6px 14px;font-size:.95rem}
+.qv{max-width:680px;margin:0 auto;padding-top:36px}
+.back{background:none;border:0;color:var(--muted);font:inherit;cursor:pointer;padding:0;margin-bottom:18px}
+.bar{height:10px;background:var(--line);border-radius:5px;overflow:hidden;margin-bottom:10px}.bar i{display:block;height:100%;background:var(--ac,var(--c1));border-radius:5px;transition:width .3s}
+.qv h2{font-size:clamp(1.8rem,5vw,2.4rem);line-height:1.15;margin:8px 0 22px}
+.opt{display:block;width:100%;text-align:left;background:var(--card);color:var(--ink);border:2px solid var(--line);border-radius:18px;padding:16px 20px;margin-bottom:12px;font:inherit;cursor:pointer;transition:transform .12s,border-color .12s,background .12s}
+.opt:hover{border-color:var(--ac,var(--c1));transform:scale(1.015)}
+.opt:active{transform:scale(.98)}
+.res{text-align:center;background:var(--rb,#ffd3cc);color:#231f2b;border-radius:32px;padding:44px 26px;position:relative;overflow:hidden}
+.res .em{font-size:4rem;line-height:1}
+.res h2{font-size:clamp(2rem,7vw,3.2rem);margin:12px 0 10px;line-height:1.05}
+.res p{max-width:30em;margin:0 auto 14px}
+.pal{display:flex;justify-content:center;gap:10px;margin:18px 0}.pal i{width:54px;height:54px;border-radius:50%;border:3px solid #fff;box-shadow:0 2px 8px rgba(0,0,0,.15)}
+.tip{background:rgba(255,255,255,.65);border-radius:16px;padding:12px 16px;max-width:30em;margin:0 auto 22px;font-size:1rem}
+.btn{display:inline-block;background:#231f2b;color:#fff;border:0;border-radius:999px;padding:13px 26px;font:700 1rem var(--f);cursor:pointer;margin:5px;transition:transform .15s}
+.btn:hover{transform:translateY(-2px)}.btn.o{background:transparent;color:#231f2b;border:2px solid #231f2b}
+.hidden{display:none}
+.cf{position:fixed;top:-20px;width:10px;height:14px;z-index:40;pointer-events:none;animation:fall 2.4s linear forwards}
+@keyframes fall{to{transform:translateY(110vh) rotate(720deg);opacity:.8}}
+footer{text-align:center;color:var(--muted);padding:40px 20px;border-top:1px solid var(--line);font-size:.95rem}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}.cf{display:none}}
+</style>
+</head>
+<body>
+<header><button class="logo" id="home">Design <b>Ahl</b></button></header>
+<main>
+<div id="homev">
+<div class="hero"><i class="dot d1"></i><i class="dot d2"></i><i class="dot d3"></i><i class="dot d4"></i>
+<h1>Design Ahl</h1><p>Quick, playful quizzes for people who love a good room. Pick one and find out what your taste says about you.</p></div>
+<div class="grid" id="tiles"></div>
+<div id="coll" class="hidden"><h3 class="sec">Your results so far</h3><div class="chips" id="chips"></div></div>
+</div>
+<div id="quizv" class="qv hidden"></div>
+</main>
+<footer>© Design Ahl · Made for the love of good rooms</footer>
+<script>
+var Z=[
+{id:"style",em:"🛋️",t:"What’s your interior style?",k:"k1",ac:"#ff6b57",q:[
+["Saturday morning looks like…","Slow coffee in a spotless, quiet room","Tea in a favorite armchair under a throw","Dancing around while plants and prints watch","Windows open, breeze coming in"],
+["Your dream sofa is…","Low, clean-lined, and neutral","Deep, tufted, and a little vintage","Velvet in a surprising color, piled with pillows","White slipcovered linen"],
+["Your walls are…","Plain and bright","Warm paint with crown molding","A gallery wall up to the ceiling","Soft blue and white"],
+["Your decorating rule is…","Less is more","Heirlooms and symmetry","More is more","Natural materials and light"],
+["Your perfect lighting is…","Hidden and soft","Table lamps in pairs","String lights and lanterns","Daylight everywhere"]],
+r:[["Modern Minimalist","🤍","Calm, clean, and intentional. Every piece earns its place.",["#f4f1ec","#cfc9bf","#2b2b2b"],"Try one oversized piece of art instead of many small ones."],["Cozy Traditional","🕯️","Warm, rich, and rooted in lasting pieces that feel like home.",["#8b5a3c","#c9a15f","#6e2b3a"],"Layer lamps at different heights for a glowing room."],["Boho Maximalist","🌿","Colorful, collected, and full of stories and plants.",["#d9733b","#e2b84a","#4b7a5a"],"Pick three colors and repeat them so the layers feel intentional."],["Coastal Calm","🌊","Light, breezy, and relaxed. Your home feels like a getaway.",["#dbe9ef","#f4ead6","#7fa5b8"],"Add linen, jute, and one deep blue accent."]]},
+{id:"room",em:"🚪",t:"Which room are you?",k:"k2",ac:"#ffb703",q:[
+["At a party you’re…","In the kitchen with everyone","On the couch holding court","Slipping away to a quiet corner","Browsing the host’s bookshelf"],
+["Your ideal weekend is…","Cooking for friends","A movie marathon with people you love","Sleeping in and moving slowly","Reading a great book"],
+["Friends describe you as…","Generous","Fun and social","Calm and caring","Thoughtful"],
+["Your favorite scent is…","Fresh bread","A vanilla candle","Clean sheets","Old books"],
+["Your superpower is…","Making people feel fed","Bringing people together","Helping people rest","Giving wise advice"]],
+r:[["The Kitchen","🍳","You’re the heart of the home. People gather where you are.",["#f2c94c","#e8e1d3","#c0562f"],"Warm lighting over the counter makes any kitchen feel inviting."],["The Living Room","🛋️","You’re the social center, comfortable, welcoming, and fun.",["#d98a5f","#efe2cc","#5f7a8a"],"Arrange seating to face each other, not just the TV."],["The Bedroom","🌙","You’re the retreat: soothing, restorative, and kind.",["#c7d3e0","#f1e8e4","#8d8aa8"],"Blackout curtains and soft textures do wonders."],["The Library","📚","You’re thoughtful, deep, and full of quiet charm.",["#3f5a47","#8b6b4a","#d9cdb4"],"Dark walls and a good reading lamp create instant atmosphere."]]},
+{id:"color",em:"🎨",t:"What’s your color personality?",k:"k3",ac:"#2bb39a",q:[
+["Pick a snack.","Toast with honey","Dark chocolate and berries","Pastel macarons","Fresh salad and herbs"],
+["Favorite season?","Early autumn","Winter holidays","Spring bloom","Lush summer"],
+["Favorite fabric?","Linen and wool","Velvet and silk","Soft cotton","Canvas and jute"],
+["Your mood is…","Grounded","Dramatic","Dreamy","Fresh"],
+["Favorite place?","A desert at sunset","An old opera house","A flower market","A rainforest"]],
+r:[["Warm Neutrals","🏜️","Cozy, grounded, and timeless. Your palette feels like golden hour.",["#e8d9c4","#c89b6d","#8a6a4f"],"Mix several shades of beige with one rich brown so it stays interesting."],["Bold Jewel Tones","💎","Rich, dramatic, and confident. You’re not afraid of color.",["#1f4e79","#7a1f4b","#0f6b5c"],"Use jewel tones on one wall or a velvet piece, then keep the rest calm."],["Soft Pastels","🌸","Gentle, light, and sweet. Your spaces feel like a daydream.",["#f6d6dc","#d9e7f5","#e6efd5"],"Keep finishes matte and add one deeper accent so pastels feel grown up."],["Earthy Greens","🌿","Fresh, natural, and calming. You bring the outdoors in.",["#6b8f5e","#a8b98a","#e9e3cf"],"Pair green with warm wood and plenty of real plants."]]},
+{id:"era",em:"⏳",t:"Which era should your home live in?",k:"k4",ac:"#8d6bf0",q:[
+["Your entryway has…","A mirror and a bit of glam","A clean teak console","An ornate hall and a chandelier","Shoes off, a bench, and one branch in a vase"],
+["Your favorite material is…","Brass and marble","Walnut","Velvet and carved wood","Pale oak and paper"],
+["An ideal evening is…","Cocktails with friends","Vinyl records","A candlelit dinner","Quiet tea"],
+["Your furniture is…","Curves and geometry","Tapered legs","Ornate and carved","Low and simple"],
+["Your wallpaper is…","Metallic and geometric","A bold retro print","Rich florals","None, just plain plaster"]],
+r:[["Art Deco Glam","✨","Bold geometry, shining metals, and a taste for the dramatic.",["#0f3d3e","#d4af37","#f1e9d2"],"Add a gold-framed mirror and rich jewel tones."],["Mid-Century Cool","🪑","Warm woods, clean lines, and effortless style.",["#c97b3b","#2a7f7f","#f0e2c4"],"Pair walnut with a pop of mustard or teal."],["Victorian Romance","🌹","Rich, layered, and full of drama and detail.",["#6e1f3a","#2f4a3a","#d9c08c"],"Layer rugs and add a chandelier to set the mood."],["Japandi Calm","🍃","Quiet, natural, and made to last, where Japanese and Scandinavian styles meet.",["#e9e1d3","#b9a88c","#3b3b36"],"Choose a few well-made pieces and leave space around them."]]},
+{id:"power",em:"⚡",t:"What’s your decorating superpower?",k:"k5",ac:"#2f9be6",q:[
+["At a thrift store you…","Leave with a full bag","Find one perfect thing","Imagine a dinner party around it","Picture the whole room it could start"],
+["Your shelves are…","Packed and full of stories","Sparse and curated","Full of serving pieces and glassware","Full of design books and sketches"],
+["Moving day means…","Seventeen boxes of treasures","Donating half of everything","Planning the housewarming","Redrawing the floor plan"],
+["When a friend asks for advice you…","Show them your favorite finds","Take one thing away","Say, “Let’s host something!”","Sketch a new layout"],
+["Your dream project is…","A home full of collected finds","A serene, edited loft","A home built for gatherings","A total transformation"]],
+r:[["The Collector","🏺","Your home tells stories. Every object has a history.",["#a8573a","#d9b66a","#4a6b5a"],"Group collections by color or material so they look curated."],["The Editor","✂️","You know what to leave out. Your spaces breathe.",["#f1ede6","#bfb7aa","#3a3a3a"],"Edit once a season and keep only what you love."],["The Host","🥂","You design for people. Your home is made for gathering.",["#c9604a","#f0d9a8","#3f6a7a"],"Plan seating and lighting for conversation first."],["The Visionary","🔭","You see what a space could become before anyone else.",["#5a4fcf","#f2b84b","#e8e4f4"],"Make a moodboard first and let it guide every purchase."]]}];
+var cur,qi,sc;
+function $(i){return document.getElementById(i)}
+function store(){try{return JSON.parse(localStorage.getItem("da")||"{}")}catch(e){return{}}}
+function save(id,t){try{var s=store();s[id]=t;localStorage.setItem("da",JSON.stringify(s))}catch(e){}}
+function home(){$("quizv").classList.add("hidden");$("homev").classList.remove("hidden");window.scrollTo(0,0);var s=store(),ks=Object.keys(s);$("coll").classList.toggle("hidden",!ks.length);$("chips").innerHTML="";
+Z.forEach(function(z){if(s[z.id]){var c=document.createElement("span");c.className="chip";c.textContent=z.em+" "+z.t.replace(/\?$/,"")+": "+s[z.id];$("chips").appendChild(c)}})}
+Z.forEach(function(z,i){var b=document.createElement("button");b.className="tile "+z.k;b.innerHTML="<span class=\"em\">"+z.em+"</span><span><h2>"+z.t+"</h2><small>5 questions · about 1 minute</small></span>";b.onclick=function(){start(i)};$("tiles").appendChild(b)});
+function start(i){cur=Z[i];qi=0;sc=[0,0,0,0];$("homev").classList.add("hidden");$("quizv").classList.remove("hidden");$("quizv").style.setProperty("--ac",cur.ac);window.scrollTo(0,0);ask()}
+function ask(){var q=cur.q[qi],v=$("quizv");v.innerHTML="<button class=\"back\" id=\"bk\">← All quizzes</button><div class=\"bar\"><i style=\"width:"+(qi/cur.q.length*100)+"%\"></i></div><div style=\"color:var(--muted)\">Question "+(qi+1)+" of "+cur.q.length+"</div><h2>"+q[0]+"</h2>";
+$("bk").onclick=home;
+var o=[0,1,2,3].map(function(n){return(n+qi)%4});
+o.forEach(function(n){var b=document.createElement("button");b.className="opt";b.textContent=q[n+1];b.onclick=function(){sc[n]++;qi++;qi<cur.q.length?ask():fin()};v.appendChild(b)})}
+function fin(){var m=0;sc.forEach(function(s,i){if(s>sc[m])m=i});var r=cur.r[m],v=$("quizv");save(cur.id,r[0]);
+var bg=["#ffd3cc","#ffe7a3","#bfeadf","#dcd0fb","#c5e4fa"][Z.indexOf(cur)];
+v.innerHTML="<div class=\"res\" style=\"--rb:"+bg+"\"><div class=\"em\">"+r[1]+"</div><div>"+cur.t+"</div><h2>"+r[0]+"</h2><p>"+r[2]+"</p><div class=\"pal\">"+r[3].map(function(c){return"<i style=\"background:"+c+"\"></i>"}).join("")+"</div><div class=\"tip\"><b>Designer tip:</b> "+r[4]+"</div><button class=\"btn\" id=\"cp\">Copy my result</button><button class=\"btn o\" id=\"rt\">Retake</button><button class=\"btn o\" id=\"al\">More quizzes</button></div>";
+$("cp").onclick=function(){var t="I got “"+r[0]+"” on the Design Ahl quiz “"+cur.t+"”";try{navigator.clipboard.writeText(t).then(function(){$("cp").textContent="Copied!"},function(){$("cp").textContent=t})}catch(e){$("cp").textContent=t}};
+$("rt").onclick=function(){start(Z.indexOf(cur))};$("al").onclick=home;window.scrollTo(0,0);burst(r[3].concat([cur.ac]))}
+function burst(cs){if(window.matchMedia("(prefers-reduced-motion:reduce)").matches)return;for(var i=0;i<36;i++){var s=document.createElement("i");s.className="cf";s.style.left=Math.random()*100+"vw";s.style.background=cs[i%cs.length];s.style.animationDelay=Math.random()*.6+"s";document.body.appendChild(s);(function(e){setTimeout(function(){e.remove()},3400)})(s)}}
+$("home").onclick=home;home();
+</script>
+</body>
+</html>
